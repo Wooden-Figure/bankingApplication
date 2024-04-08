@@ -15,6 +15,12 @@ void InvestmentCalculator::calculateInvestmentGrowth() {
     calculateYearlyGrowth(true);  // with additional deposits.
 }
 
+/********
+ * Title: iomanip setprecision() function in C++ with Examples
+ * Author: guptayas
+ * Date: 18 Feb, 2022
+ * Availability: https://www.geeksforgeeks.org/iomanip-setprecision-function-in-c-with-examples/
+ ********/
 // displays the results for the calculations
 void InvestmentCalculator::displayResults() const {
     std::cout << std::fixed << std::setprecision(2); // formats numbers to show two decimal places.
