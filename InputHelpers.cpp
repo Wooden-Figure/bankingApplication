@@ -20,7 +20,7 @@ bool getDoubleInput(const std::string& t_prompt, double& t_value) {
     // when the user a number besides a double, this is prompted
     if (std::cin.fail()) {
         clearInputBuffer();
-        std::cout << "Invalid entry. Please enter a numeric value.\n";
+        std::cout << "Invalid entry. Please enter a numerical value.\n";
         return false;
     }
     return true;
