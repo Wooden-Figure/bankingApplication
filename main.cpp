@@ -1,3 +1,11 @@
+/* Purpose: This program, banking application (main.cpp), accepts several inputs from the user
+ * involving banking information and outputs investment information. The information the program
+ * accepts relates to initial investment amount, monthly deposits, and several other variables.
+ * This program uses several functions and allows for scalability.
+ * Author: Robert Soto
+ * Created: 3/30/2024
+ */
+
 #include "InvestmentCalculator.h"
 #include "InputHelpers.h"
 #include <iostream>
@@ -54,21 +62,21 @@ int main() {
                 while (!getDoubleInput("Enter Annual Interest: %", annualInterest)) {}
                 while (!getIntInput("Enter Number of Years: ", years)) {}
             } else if (newChoice == 'N' || newChoice == 'n') {
-                userSatisfied = true; // No more changes desired, proceed to calculation
+                userSatisfied = true; // No more changes desired, continue to calculation
             } else {
-                std::cout << "Invalid entry, please enter Y for yes or N for no." << std::endl;
+                std::cout << "Invalid entry, please enter Y/y for yes or N/n for no." << std::endl;
             }
         }
         while (!userSatisfied); // exits the loop when user is true
 
-        // calculation and result display
+        // displays results from the calculations
         InvestmentCalculator calculator(initialInvestment, monthlyDeposit, annualInterest, years);
         calculator.calculateInvestmentGrowth();
         calculator.displayResults();
 
         std::cout << "\nWould you like to calculate another investment? (Y/N): " << std::endl;
         std::cin >> userChoice;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears the buffer
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     } while (userChoice == "Y" || userChoice == "y");
 
